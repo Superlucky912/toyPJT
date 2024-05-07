@@ -1,25 +1,29 @@
-<template>
-  <index />
+<template id="app">
+  <div class="page">
+    <sideNav />
+    <mainPage />
+  </div>
 </template>
 
 <script>
-import index from './components/index.vue'
+import mainPage from "./components/mainPage.vue";
+import sideNav from "./components/theSideNav.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    index
-  }
-}
+    mainPage,
+    sideNav,
+  },
+};
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #3080cf;
-  margin-top: 60px;
-}
+} */
 </style>
