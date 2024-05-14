@@ -1,35 +1,41 @@
 package com.bankmanager.vue.web.controller;
 
+import java.util.Map;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.bankmanager.common.service.testService;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 
-@Controller
+@RestController
 public class indexController {
     
     private final Logger log = LoggerFactory.getLogger(getClass());
 
     @Autowired
-    testService test;
+    private testService test;
 
     @GetMapping("/")
-	public String index() {
-        
-		return "index.html";
+	public ModelAndView index() {
+        ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("index.html");
+        log.info("indexController====>{}",test.selectTest());
+		return mv;
 	}
 
-    @PostMapping("/index")
-    public void test() {
+    @PostMapping("/test")
+    public Map<String, Object> test() {
         
-        log.info("indexController====>{}",test.selectTest());
-        
+        log.info("indexController====>{}",test.selectTest ());
+        return test.selectTest();
     }
     
 
