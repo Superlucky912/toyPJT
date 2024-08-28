@@ -1,19 +1,19 @@
 <template id="app">
   <div class="page">
-    <sideNav />
-    <mainPage />
+    <SideNav />
+    <MainPage />
   </div>
 </template>
 
 <script>
-import mainPage from "./components/mainPage.vue";
-import sideNav from "./components/theSideNav.vue";
+import MainPage from "./components/mainPage.vue";
+import SideNav from "./components/theSideNav.vue";
 
 export default {
   name: "App",
   components: {
-    mainPage,
-    sideNav,
+    MainPage,
+    SideNav,
   },
 };
 </script>
