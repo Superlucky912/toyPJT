@@ -14,34 +14,34 @@
       </button>
       <!-- 상단 로고 -->
       <h1 class="navbar-brand navbar-brand-autodark">
-        <a href=".">
+        <router-link to="/">
           <PigIcon />
           BANK MANAGER
-        </a>
+        </router-link>
       </h1>
       <!-- navigation start-->
       <div class="collapse navbar-collapse" id="sidebar-menu">
         <ul class="navbar-nav pt-lg-3">
           <!-- mainPage -->
           <li class="nav-item">
-            <a class="nav-link" href="./">
+            <router-link class="nav-link" to="/">
               <HomeIcon />
               <span class="nav-link-title"> MainPage </span>
-            </a>
+            </router-link>
           </li>
           <!-- 회비입금 -->
           <li class="nav-item">
-            <a class="nav-link" href="./">
+            <router-link class="nav-link" to="/income">
               <CoinIcon />
               <span class="nav-link-title"> 회비입금 </span>
-            </a>
+            </router-link>
           </li>
           <!-- 지출내역 -->
           <li class="nav-item">
-            <a class="nav-link" href="./">
+            <router-link class="nav-link" to="/">
               <WonIcon />
               <span class="nav-link-title"> 지출내역 </span>
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>
