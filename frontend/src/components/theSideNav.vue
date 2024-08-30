@@ -38,7 +38,7 @@
           </li>
           <!-- 지출내역 -->
           <li class="nav-item">
-            <router-link class="nav-link" to="/">
+            <router-link class="nav-link" to="/expenses">
               <WonIcon />
               <span class="nav-link-title"> 지출내역 </span>
             </router-link>

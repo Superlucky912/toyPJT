@@ -6,8 +6,7 @@
         <div class="row g-2 align-items-center">
           <div class="col">
             <!-- Page pre-title -->
-            <div class="page-pretitle">Overview</div>
-            <h2 class="page-title">MainPage</h2>
+            <h2 class="page-title">한눈에 보기</h2>
           </div>
         </div>
       </div>

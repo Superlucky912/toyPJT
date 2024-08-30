@@ -1,35 +1,55 @@
 <template>
   <div class="page-wrapper">
-    <!-- 년도 달력 -->
-    <div class="navbar-expand-lg navbar-light bg-light border-bottom p-1">
+    <!-- Page header -->
+    <div class="page-header d-print-none">
+      <div class="container-xl">
+        <div class="row g-2 align-items-center">
+          <div class="col">
+            <h2 class="page-title">회비입금</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page body -->
+    <div class="page-body">
+      <!-- 년도 달력 -->
       <h1 class="text-center text-secondary">{{ year }}년</h1>
-    </div>
-    <!-- 월 테이블 -->
-    <div class="table-responsive m-3">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col" style="width: 25px">이름</th>
-            <th scope="col" v-for="m in month" :key="m">{{ m }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="member in members" :key="member.id">
-            <th>
-              <span class="memName">{{ member.name }}</span>
-            </th>
-            <td v-for="m in month" :key="m">
-              <div class="checkbox-wrapper-10">
-                <input class="tgl tgl-flip" :id="'G_' + member.id + '_' + m" type="checkbox" checked v-model="checkedValues[member.id][m]" />
-                <label class="tgl-btn" data-tg-off="미입금" data-tg-on="입금완료" :for="'G_' + member.id + '_' + m"></label>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div>
-      <button type="button" class="m-3">클릭</button>
+      <!-- 월 테이블 -->
+      <div class="table-responsive m-3">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 25px">이름</th>
+              <th scope="col" v-for="m in month" :key="m">{{ m }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="member in members" :key="member.id">
+              <th>
+                <span class="memName">{{ member.name }}</span>
+              </th>
+              <td v-for="m in month" :key="m">
+                <div v-if="true" class="checkbox-wrapper-10">
+                  <input class="tgl tgl-flip" :id="'C_' + member.id + '_' + m" type="checkbox" checked v-model="checkedValues[member.id][m]" />
+                  <label class="tgl-btn" data-tg-off="미입금" data-tg-on="입금됨" :for="'C_' + member.id + '_' + m"></label>
+                </div>
+                <div v-if="false">
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="font-size: 0.6rem; text-align: center"
+                    :id="'T_' + member.id + '_' + m"
+                    placeholder="금액입력"
+                  />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <button type="button" class="btn btn-yellow m-3" style="float: right">수정</button>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,6 +71,7 @@ export default {
       { id: 3, name: "유종훈" },
       { id: 4, name: "임채민" },
       { id: 5, name: "정성희" },
+      { id: 6, name: "김예찬" },
     ]);
 
     // 체크박스 상태를 멤버 ID와 월을 기준으로 관리합니다
@@ -118,8 +139,9 @@ export default {
 }
 .checkbox-wrapper-10 .tgl + .tgl-btn {
   outline: 0;
+  margin: auto;
   display: block;
-  width: 4em;
+  width: 5em;
   height: 2em;
   position: relative;
   cursor: pointer;
@@ -162,7 +184,6 @@ export default {
   line-height: 2em;
   font-weight: bold;
   color: #fff;
-  position: absolute;
   top: 0;
   left: 0;
   -webkit-backface-visibility: hidden;
