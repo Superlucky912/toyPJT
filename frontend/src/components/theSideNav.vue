@@ -20,15 +20,24 @@
         </router-link>
       </h1>
       <!-- navigation start-->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">현재 잔액</h2>
+        </div>
+        <div class="card-body">
+          <WonIcon />
+          <h2 style="display: inline-block">1,600,000</h2>
+        </div>
+      </div>
       <div class="collapse navbar-collapse" id="sidebar-menu">
         <ul class="navbar-nav pt-lg-3">
           <!-- mainPage -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link" to="/">
               <HomeIcon />
               <span class="nav-link-title"> MainPage </span>
             </router-link>
-          </li>
+          </li> -->
           <!-- 회비입금 -->
           <li class="nav-item">
             <router-link class="nav-link" to="/income">
@@ -72,24 +81,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* .navbar {
-  --tblr-navbar-bg: #ffd225;
-  --tblr-navbar-border-color: #b15f00;
-  --tblr-navbar-color: #b15f00;
-  --tblr-navbar-brand-color: #b15f00;
-  --tblr-navbar-border-width: 3px;
-}
-.icon {
-  stroke-width: 2.5px;
-}
-
-.nav-link-icon {
-  color: #b15f00;
-}
-
-.nav-link {
-  font-weight: 700;
-} */
-</style>

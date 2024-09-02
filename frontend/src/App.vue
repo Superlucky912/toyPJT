@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// import MainPage from "@/views/mainPage.vue";
 import SideNav from "@/components/theSideNav.vue";
 
 export default {
