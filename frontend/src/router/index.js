@@ -5,6 +5,7 @@ import Expenses from "@/views/expenses.vue";
 
 const routes = [
   // { path: "/", name: "MainPage", component: MainPage },
+  { path: "/", redirect: "/income" },
   { path: "/income", name: "Income", component: Income },
   { path: "/expenses", name: "Expenses", component: Expenses },
 ];

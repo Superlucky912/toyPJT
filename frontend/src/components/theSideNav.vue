@@ -81,3 +81,18 @@ export default {
   },
 };
 </script>
+<style lang="css" scoped>
+@media (max-width: 992px) {
+  /*20240903 축소 시 현재 잔액 css 수정*/
+  .card {
+    display: inline-block;
+  }
+  .card-header {
+    display: inline-block;
+  }
+  .card-body {
+    display: inline-block;
+  }
+  /* 수정 끝*/
+}
+</style>

@@ -46,9 +46,9 @@
             </tr>
           </tbody>
         </table>
-        <div>
-          <button type="button" class="btn btn-yellow m-3" style="float: right">수정</button>
-        </div>
+      </div>
+      <div>
+        <button type="button" class="btn btn-yellow m-3" style="float: right">수정</button>
       </div>
     </div>
   </div>
