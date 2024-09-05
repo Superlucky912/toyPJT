@@ -16,7 +16,7 @@
       <h1 class="navbar-brand navbar-brand-autodark">
         <router-link to="/">
           <PigIcon />
-          BANK MANAGER
+          PayShare
         </router-link>
       </h1>
       <!-- navigation start-->
@@ -25,7 +25,7 @@
           <h2 class="card-title">현재 잔액</h2>
         </div>
         <div class="card-body">
-          <WonIcon />
+          <!-- <WonIcon /> -->
           <h2 style="display: inline-block">1,600,000</h2>
         </div>
       </div>
@@ -82,7 +82,26 @@ export default {
 };
 </script>
 <style lang="css" scoped>
-@media (max-width: 992px) {
+@media (max-width: 667px) {
+  /*20240903 핸드폰 화면 css 수정*/
+  .card {
+    border: none;
+    float: right;
+  }
+  .card-header {
+    display: inline-block;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .card-body {
+    display: inline-block;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  /* 수정 끝*/
+}
+
+@media (min-width: 667px) and (max-width: 992px) {
   /*20240903 축소 시 현재 잔액 css 수정*/
   .card {
     display: inline-block;
