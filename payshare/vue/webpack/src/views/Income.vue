@@ -140,6 +140,7 @@ export default {
   margin-top: 3px;
 }
 .form-control {
+  width: 5em;
   padding: 3px;
   text-align: center;
 }
