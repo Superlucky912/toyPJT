@@ -32,8 +32,10 @@
 </template>
 
 <script>
+import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+
 
 export default {
   name: "Login",
@@ -49,24 +51,38 @@ export default {
       router.push("/income");
     }
 
-    const handleLogin = () => {
-      // 로그인 validation
-      // id check
-      if (userId.value === "123") {
-        idError.value = false;
+    const handleLogin = async () => {
+      const params = new URLSearchParams();
+      params.append("id", userId.value);
+      params.append("pw", password.value);
 
-        //pw check
-        if (password.value === "123") {
+      try {
+        const response = await axios.post(
+          "http://localhost:8080/api/login",
+          params,
+          {
+            withCredentials: true, // 세션 기반 로그인 시 꼭 필요!
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              },
+          }
+          
+        );
+
+        // 로그인 성공 처리
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("userId", userId.value);
+        router.push("/income");
+      } catch (error) {
+        // 로그인 실패 처리
+        console.error("로그인 실패", error);
+        if (error.response && error.response.status === 401) {
+          idError.value = false;
           pwError.value = true;
-          localStorage.setItem("isLoggedIn", "true");
-          localStorage.setItem("userId", userId.value);
-
-          router.push("/income");
         } else {
-          pwError.value = true;
+          idError.value = true;
+          pwError.value = false;
         }
-      } else {
-        idError.value = true;
       }
     };
 

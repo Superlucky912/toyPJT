@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bankmanager.common.service.dao.loginMapperDao">
+ 
+    <select id="login" parameterType="com.bankmanager.common.service.vo.loginVo" resultType="com.bankmanager.common.service.vo.loginVo">
+        SELECT   MEM_SEQ AS seq
+                ,MEM_NAME AS name
+                ,MEM_ID AS id
+                ,PW AS pw 
+          FROM MEMBER
+          WHERE MEM_ID = #{id}
+    </select>
+
+</mapper>
